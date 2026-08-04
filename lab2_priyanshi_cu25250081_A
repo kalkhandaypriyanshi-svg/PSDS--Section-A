@@ -1,0 +1,60 @@
+#linearsearch
+def linear_search(arr, key):
+    print("Index\tElement")
+    for i in range(len(arr)):
+        print(i, "\t", arr[i])
+
+    for i in range(len(arr)):
+        if arr[i] == key:
+            return i
+    return -1
+
+arr = [12, 27, 34, 45, 58, 63, 77]
+
+key = int(input("Enter element to search: "))
+
+result = linear_search(arr, key)
+
+if result != -1:
+    print("Element found at index:", result)
+else:
+    print("Element not found")
+    #binarysearch
+def binary_search(arr, key):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == key:
+            return mid
+        elif arr[mid] < key:
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    return -1
+n = int(input("Enter the number of elements: "))
+
+arr = []
+
+print("Enter the elements in sorted order:")
+for i in range(n):
+    element = int(input(f"Element {i}: "))
+    arr.append(element)
+
+
+print("\nIndex\tElement")
+for i in range(n):
+    print(i, "\t", arr[i])
+
+
+key = int(input("\nEnter the element to search: "))
+
+result = binary_search(arr, key)
+
+if result != -1:
+    print("Element found at index:", result)
+else:
+    print("Element not found")
